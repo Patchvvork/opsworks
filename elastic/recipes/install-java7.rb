@@ -6,10 +6,6 @@
 
 # Update apt package database
 
-execute "apt-get update" do
-	command "apt-get update"
-end
-
 # Install the latest stable version of java 8
 
 #execute "Install latest java stable version" do
@@ -20,14 +16,14 @@ end
 #	command "apt-get install -y openjdk-8-jdk"
 #end
 
-# Install openjdk-7-jre
+# Install openjdk-8-jdk
 
-package "openjdk-7-jre" do
-	action :install
+execute "openjdk-8-jdk" do
+	command "yum install java-1.8.0-openjdk -y"
 end
 
-# Install openjdk-7-jdk
+# Install openjdk-8-jdk-devel
 
-package "openjdk-7-jdk" do
-	action :install
+execute "openjdk-8-jdk" do
+	command "yum install java-1.8.0-openjdk-devel -y"
 end
